@@ -1,0 +1,19 @@
+.loginWrapper{
+    display: flex;
+    justify-content: center;
+}
+.loginCard{
+    margin-top: 40px;
+   width: 30vw;
+}
+.insta-logo{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px){
+    .loginCard{
+        margin-top: 40px;
+       width: 80%;
+    }  
+}
