@@ -1,4 +1,4 @@
-import  React,{useEffect,useContext} from 'react';
+import  React,{useEffect,useContext, useState} from 'react';
 import { AuthContext} from '../Context/AuthContext';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -16,7 +16,9 @@ import insta from '../Assets/insta-logo.jpg'
 export default function Login() {
 
   const store = useContext(AuthContext);
-
+  const [user,setuser] = useState('');
+  const [loading,setLoading] = useState('');
+  
   console.log(store);
     const useStyles= makeStyles({
         text1:{
