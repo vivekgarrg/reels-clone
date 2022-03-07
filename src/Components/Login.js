@@ -11,13 +11,13 @@ import {Link} from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import './Login.css'
 import insta from '../Assets/insta-logo.jpg'
+import { useHistory } from 'react-router-dom';
 
 
 export default function Login() {
 
   const store = useContext(AuthContext);
   const [user,setuser] = useState('');
-  const [loading,setLoading] = useState('');
   
   console.log(store);
     const useStyles= makeStyles({
@@ -33,6 +33,31 @@ export default function Login() {
         }
     })
     const classes = useStyles();
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [error,setError] = useState('');
+    const [loading,setLoading] = useState(false);
+    const history = useHistory();
+    const {login} = useContext(AuthContext)
+
+    const handleClick = async() =>{
+  
+      try{
+        setError('')
+        setLoading(true)
+        let res = await login(email,password);
+        setLoading(false)
+        history.push('/')
+      }catch(error){
+        setError(error)
+        setTimeout(()=>{
+          setError(' ')
+        },2000);
+        setLoading(false)
+      }
+    
+
+    }
 
     useEffect(()=>{
         document.title = "Login"
@@ -50,12 +75,12 @@ export default function Login() {
           <Typography className={classes.text1} variant='subtitle1'>
             Login to see photos and videos from your friends
           </Typography>
-          {true && <Alert severity="error">This is an error alert — check it out!</Alert>}
-          <TextField id="outlined-basic" label="Email" variant="outlined"  fullWidth={true} margin="dense" size="small"/>
-          <TextField id="outlined-basic" label="Password" variant="outlined"  fullWidth={true} margin="dense" size="small"/>
+          {error!='' && <Alert severity="error">{error}</Alert>}
+          <TextField id="outlined-basic" label="Email" variant="outlined"  fullWidth={true} margin="dense" size="small" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+          <TextField id="outlined-basic" label="Password" variant="outlined"  fullWidth={true} margin="dense" size="small" value={password} onChange={(e)=>setPassword(e.target.value)}/>
         </CardContent>
         <CardActions>
-            <Button fullWidth={true} variant="contained" color='primary'>Login</Button>
+          <Button fullWidth={true} variant="contained" color='primary' onClick={handleClick} disabled={loading}>Login</Button>
         </CardActions>
 
         <CardContent>
