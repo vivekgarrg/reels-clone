@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import './SignUp.css'
-import insta from '../Assets/insta-logo.jpg'
+import insta from '../Assets/Feels.png'
 import { AuthContext } from '../Context/AuthContext';
 import { storage,database } from '../firebaseauth';
 import { useHistory } from 'react-router-dom';
@@ -21,10 +21,8 @@ export default function SignUp() {
             textAlign:'center'
         },
         card2:{
-            marginTop:"10px",
-            paddingTop:'0px',
-            paddingBottom:'0px',
-            height:'8%'
+          maxHeight:'10%',
+          padding:"0px"
         }
     })
     const classes = useStyles();
@@ -90,6 +88,9 @@ export default function SignUp() {
       }
 
     }
+  useEffect(()=>{
+      document.title = "Sign Up"
+  })
   return (
      
       <div className='singUpWrapper'>

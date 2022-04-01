@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import './Login.css'
-import insta from '../Assets/insta-logo.jpg'
+import insta from '../Assets/Feels.png'
 import { useHistory } from 'react-router-dom';
 
 
@@ -26,10 +26,8 @@ export default function Login() {
             textAlign:'center'
         },
         card2:{
-            marginTop:"10px",
-            paddingTop:'0px',
-            paddingBottom:'0px',
-            height:'8%'
+          maxHeight:'15%',
+          padding:"0px"
         }
     })
     const classes = useStyles();
