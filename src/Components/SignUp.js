@@ -73,6 +73,7 @@ export default function SignUp() {
                   email:email,
                   userId:uid,
                   fullName:name,
+                  postIds:[],
                   profileUrl:url,
                   createdAt:database.getTimeStamp()
                 })

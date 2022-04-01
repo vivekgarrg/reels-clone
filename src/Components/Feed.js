@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../Context/AuthContext'
 import { database } from '../firebaseauth'
 import UploadFile from './UploadFile'
+import Posts from './Posts'
 
 function Feed() {
   const {user,logOut} = useContext(AuthContext)
@@ -21,6 +22,7 @@ function Feed() {
     
     </div>
     <UploadFile user={userData}/> 
+    <Posts userData={userData} />
     </div>
   )
 }
