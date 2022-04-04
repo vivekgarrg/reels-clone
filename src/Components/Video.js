@@ -1,5 +1,6 @@
 import React from 'react'
 import './Video.css'
+import  ReactDOM  from 'react-dom';
 
 function Video(props) {
 
@@ -8,8 +9,17 @@ function Video(props) {
           e.target.muted = !e.target.muted
         //   e.target.muted != e.target.muted
     }
+
+    const handleScroll = (e)=>{
+      let next = ReactDOM.findDOMNode(e.target).parentNode.nextSibling;
+      if(next){
+        next.scrollIntoView()
+        e.target.muted = true
+      }
+
+    }
   return (
-     <video src={props.src} muted="muted"  className='videos-styling' onClick={handleClick} controls>
+     <video src={props.src} onEnded={handleScroll} muted="muted"  className='videos-styling' onClick={handleClick} >
          
      </video>
     
