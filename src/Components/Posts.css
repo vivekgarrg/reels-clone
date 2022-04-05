@@ -1,5 +1,6 @@
 .video-container{
     height: 80vh;
+    width: 25vw;
     border-radius: 20px;
     background-color: white;
     overflow: scroll;
@@ -38,4 +39,37 @@
 .unlike{
     cursor: pointer;
     color: white;
+}
+.chat-styling{
+    position: absolute;
+    bottom: 2%;
+    left: 25%;
+    color: white;
+}
+.modal-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.video-modal{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-modal video{
+    height: 90vh;
+}
+.comment-modal{
+    width: 50%;
+    height: 100%;
+}
+.unlike2{
+    color: black;
+    cursor: pointer;
+}
+
+.card1{
+    height: 70vh;
 }
