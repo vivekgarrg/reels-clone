@@ -76,6 +76,8 @@ function UploadFile(props) {
     }
 
   return (
+<div style={{marginTop:"6rem", marginBottom:"1rem"}}>
+      {
     error!=''?<Alert severity="error">{error}</Alert>:
    <>
    <input type="file" accept="video/*" onChange={(e)=>handleChange(e.target.files[0])} id='upload-input' style={{display:'none'}}/>
@@ -88,10 +90,13 @@ function UploadFile(props) {
        >
            
            Upload Video</Button>
-           {loading && <LinearProgress color="secondary" />}
+           
    </label>
-     
+   {loading && <LinearProgress color="secondary" />}  
    </>
+      }
+
+    </div>
   )
 }
 

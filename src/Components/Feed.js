@@ -4,6 +4,7 @@ import { AuthContext } from '../Context/AuthContext'
 import { database } from '../firebaseauth'
 import UploadFile from './UploadFile'
 import Posts from './Posts'
+import Navbar from './NavBar'
 
 function Feed() {
   const {user,logOut} = useContext(AuthContext)
@@ -15,15 +16,18 @@ function Feed() {
      return ()=> {unsub()}
   },[user])
   return (
-    <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
-      <div className='comp' style={{width:'50%'}}>
-    <h1>Welcome to reels feed...</h1>
-    <Button onClick={logOut}>logout</Button>
-    
-    </div>
-    <UploadFile user={userData}/> 
-    <Posts userData={userData} />
-    </div>
+   <> 
+            <Navbar userData={userData}/>
+              <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+                      {/* <div className='comp' style={{width:'50%'}}>
+                    <h1>Welcome to reels feed...</h1>
+                    <Button onClick={logOut}>logout</Button>
+                    </div> */}
+                  
+              <UploadFile user={userData}/> 
+              <Posts userData={userData} />
+              </div>
+    </>
   )
 }
 
