@@ -75,7 +75,7 @@ export default function Login() {
           </Typography>
           {error!='' && <Alert severity="error">{error}</Alert>}
           <TextField id="outlined-basic" label="Email" variant="outlined"  fullWidth={true} margin="dense" size="small" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-          <TextField id="outlined-basic" label="Password" variant="outlined"  fullWidth={true} margin="dense" size="small" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+          <TextField type="password" id="outlined-basic" label="Password" variant="outlined"  fullWidth={true} margin="dense" size="small" value={password} onChange={(e)=>setPassword(e.target.value)}/>
         </CardContent>
         <CardActions>
           <Button fullWidth={true} variant="contained" color='primary' onClick={handleClick} disabled={loading}>Login</Button>

@@ -6,6 +6,9 @@
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
+    background-color: black;
+    margin-bottom: 10px;
+    padding: 2px;
 }
 
 .video-container::-webkit-scrollbar{
@@ -72,4 +75,10 @@
 
 .card1{
     height: 70vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .video-container{
+        width: fit-content;
+    }
 }

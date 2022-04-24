@@ -107,7 +107,7 @@ export default function SignUp() {
           </Typography>
           {error!='' && <Alert severity="error">{error}</Alert>}
           <TextField id="outlined-basic" label="Email" variant="outlined"  fullWidth={true} margin="dense" size="small" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-          <TextField id="outlined-basic" label="Password" variant="outlined"  fullWidth={true} margin="dense" size="small" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+          <TextField type="password" id="outlined-basic" label="Password" variant="outlined"  fullWidth={true} margin="dense" size="small" value={password} onChange={(e)=>setPassword(e.target.value)}/>
           <TextField id="outlined-basic" label="Full Name" variant="outlined"  fullWidth={true} margin="dense" size="small" value={name} onChange={(e)=>setName(e.target.value)}/>
           <Button fullWidth={true} color="secondary" variant="outlined" component="label" value={file} onChange={(e)=>setFile(e.target.files[0])}>
               UPLOAD PROFILE IMAGE

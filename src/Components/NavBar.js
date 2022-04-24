@@ -124,11 +124,11 @@ export default function Navbar({userData}) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{background:"white"}} >
+      <AppBar position="fixed" sx={{background:"white", marginTop:"-10px"}} >
         <Toolbar>
          
          <div style={{marginLeft:"2%"}}>
-             <img  style={{width:"15vw", height: "auto"}} src={feels} onClick={handleBannerClick}/>
+             <img  style={{width:"10vw", height: "auto", cursor:"pointer"}} src={feels} onClick={handleBannerClick}/>
          </div>
          
           <Box sx={{ flexGrow: 1 }} />

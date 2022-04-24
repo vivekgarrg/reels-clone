@@ -6,6 +6,7 @@ import {AuthProvider} from './Context/AuthContext'
 import Feed from './Components/Feed';
 import PrivateRoute from './Components/PrivateRoute';
 import Profile from './Components/Profile';
+import Ioa from './Components/Ioa'
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
     </Switch>
     </AuthProvider> 
     </BrowserRouter>
-
+  
   
   );
 }
